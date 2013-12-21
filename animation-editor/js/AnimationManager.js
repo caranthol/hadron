@@ -6,11 +6,15 @@ function Animation()
     this.cols = 0;
     this.rows = 0;
     this.fps = 0;
+    this.startX = 0;
+    this.startY = 0;
+    this.endX = 0;
+    this.endY = 0;
     this.xDef = 1;
     this.yDef = 1;
 }
 
-Animation.prototype.initAnimation = function(frameW, frameH, frameY, cols, rows, fps)
+Animation.prototype.initAnimation = function(frameW, frameH, frameY, cols, rows, fps, startX, startY, endX, endY)
 {
     this.frameW = frameW;
     this.frameH = frameH;
@@ -18,6 +22,10 @@ Animation.prototype.initAnimation = function(frameW, frameH, frameY, cols, rows,
     this.cols = cols;
     this.rows = rows;
     this.fps = fps;
+    this.startX = startX;
+    this.startY = startY;
+    this.endX = endX;
+    this.endY = endY;
 };
 
 Animation.prototype.initAnimationFromJSON = function(json)
@@ -33,6 +41,10 @@ Animation.prototype.initAnimationFromJSON = function(json)
     this.destY = jsonObj.destY;
     this.xDef = jsonObj.xDef;
     this.yDef = jsonObj.yDef;
+    this.startX = jsonObj.startX;
+    this.startY = jsonObj.startY;
+    this.endX = jsonObj.endX;
+    this.endY = jsonObj.endY;
 };
 
 function AnimationManager()
