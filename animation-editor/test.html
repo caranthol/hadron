@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+</head>
+<body>
+<canvas id="myCanvas" width="900" height="900"></canvas>
+<script type="text/javascript" src="AnimationManager.js"></script>
+
+<script>
+	var prueba1 = new Animation();
+	prueba1.frameW = 160;
+	prueba1.frameH = 200;
+	
+	var manager = new AnimationManager();
+	manager.image = "/imgs/anim.png";
+	manager.imageName = "prueba";
+	
+	manager.addAnimation("prueba", prueba1);
+	manager.setAnimation("prueba");
+	
+	var simulation = setInterval(manager.drawImmediate(context,0,0), 100);
+</script>
+</body>
+</html>
